@@ -1,0 +1,59 @@
+#Criar um Validador de CPF
+
+lista_cpf = []
+
+while True:
+    cpf = input('Digite um cpf: ')
+    if len(cpf)!=11 or not cpf.isdigit():
+        print('ERROR. VOCÊ PRECISA DIGITAR 11 NÚMEROS')
+        continue
+    else:
+        for num_1 in cpf:
+            lista_cpf.append(num_1)
+        
+        contador = 10
+        soma_1 = 0
+        
+        for conversao in lista_cpf:
+            conversao = int(conversao)
+            soma_1 += conversao*contador
+            contador-=1
+            if contador==1:
+                 break
+
+        digito_1 = ''
+
+        check_1 = 11 - soma_1%11
+        if check_1>9:
+            digito_1 = 0
+        else:
+            digito_1 = check_1
+        
+        if str(digito_1) != lista_cpf[9]:
+            print('CPF INVÁLIDO')
+            break
+        elif str(digito_1) == lista_cpf[9]:
+             
+             contador_2 = 11
+             soma_2 = 0
+    
+             for conversao_2 in lista_cpf:
+                 conversao_2 = int(conversao_2)
+                 soma_2 += conversao_2*contador_2
+                 contador_2-=1
+                 if contador_2==1:
+                     break
+    
+             digito_2 = ''
+             check_2 = 11 - soma_2%11
+    
+             if check_2>9:
+                 digito_2 = 0
+             else:
+                 digito_2 = check_2
+             if str(digito_2) != lista_cpf[10]:
+                     print('CPF INVÁLIDO')
+                     break
+             else:
+                     print('CPF VÁLIDO')
+                     break
