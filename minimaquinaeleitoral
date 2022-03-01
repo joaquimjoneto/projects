@@ -1,0 +1,33 @@
+#12 - Ciro
+#13 - Lula
+#17 - Bolsonaro
+#45 - Dória
+#Outro - Brancos, Nulos ou Inválidos
+
+n_votos = int(input('Digite o número de votantes: '))
+c1 = c2 = c3 = c4 = c5 = 0
+
+for n in range(1, n_votos+1):
+  
+  vote = int(input('Escolha o número de seu candidato: '))
+  if vote==12:
+    c1 += 1
+    continue
+  elif vote==13:
+    c2 += 1
+    continue
+  elif vote==17:
+    c3 += 1
+    continue
+  elif vote==45:
+    c4 += 1
+    continue
+  else:
+    c5 += 1
+    continue
+
+print(f'Ciro teve {c1} votos')
+print(f'Lula teve {c2} votos')
+print(f'Bolsonaro teve {c3} votos')
+print(f'Dória teve {c4} votos')
+print(f'Total de votos brancos, nulos e inválidos foi de {c5} votos')
