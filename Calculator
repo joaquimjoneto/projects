@@ -1,0 +1,119 @@
+print(60*'-')
+print()
+print(23*' ', 'CALCULATOR')
+print()
+print(60*'-')
+print()
+
+print('1 - SUM')
+print()
+print('2 - SUBTRACTION')
+print()
+print('3 - MULTIPLICATION')
+print()
+print('4 - DIVISION')
+print()
+print('5 - POWER')
+print()
+print('6 - Nth ROOT')
+print()
+
+
+def sum(num_1, num_2):
+    "'This function returns the sum of two numbers'"
+    return print(f'{num_1} + {num_2} = {num_1 + num_2}')
+
+
+def sub(num_1, num_2):
+    "'This function returns the subtraction of two numbers'"
+    return print(f'{num_1} - {num_2} = {num_1 - num_2}')
+
+
+def mult(num_1, num_2):
+    "'This function returns the multiplication of two numbers'"
+    return print(f'{num_1} * {num_2} = {num_1 * num_2}')
+
+
+def div(num_1, num_2):
+    "'This function returns the division of a given number by another'"
+    return print(f'{num_1}/{num_2} = {num_1 / num_2}')
+
+
+def sqrt(num_1, num_2):
+    "'This function returns the Nth root of a given number'"
+    return print(f'The {num_2}th root of {num_1} = {pow(num_1, 1/num_2)}')
+
+
+while True:
+
+    operator = input('Choose the operation: ')
+
+    if operator.isdigit():
+        operator = int(operator)
+    else:
+        print()
+        print('Choose a valid operation. An integer in range [1, 4]')
+        print()
+        continue
+
+    if operator == 1:
+        print()
+        num_1 = float(input('Type number #1: '))
+        num_2 = float(input('Type number #2: '))
+        print()
+        sum(num_1, num_2)
+        break
+
+    elif operator == 2:
+        print()
+        num_1 = float(input('Type number #1: '))
+        num_2 = float(input('Type number #2: '))
+        print()
+        sub(num_1, num_2)
+        break
+
+    elif operator == 3:
+        print()
+        num_1 = float(input('Type number #1: '))
+        num_2 = float(input('Type number #2: '))
+        print()
+        mult(num_1, num_2)
+        break
+
+    elif operator == 4:
+        print()
+        num_1 = float(input('Type number #1: '))
+        num_2 = float(input('Type number #1: '))
+        print()
+        div(num_1, num_2)
+        break
+
+    elif operator == 5:
+        print()
+        num_1 = float(input('Type number: '))
+        num_2 = float(input('Type the power: '))
+        print()
+        print(f'{num_1} to the power of {num_2} = {pow(num_1, num_2)}')
+        break
+
+    elif operator == 6:
+        print()
+        num_2 = float(input('Type the Nth root number: '))
+        print()
+        num_1 = float(input('Type a positive number: '))
+        if num_1 < 0:
+            print()
+            print('ERROR. You have to type a POSITIVE NUMBER')
+            print()
+            continue
+
+        else:
+            print()
+            sqrt(num_1, num_2)
+            break
+
+    else:
+        print()
+        print('Choose a valid operation. An integer in range [1, 4]')
+        print()
+        continue
